@@ -1,0 +1,2 @@
+ticker,name,market,locale,currency,active,primaryExch,updated,codes,url
+AAPL,Apple Inc. Common Stock,STOCKS,US,USD,True,NASDAQ,2020-06-23,"{'cik': '0000320193', 'figiuid': 'EQ0010169500001000', 'scfigi': 'BBG001S5N8V8', 'cfigi': 'BBG000B9XRY4', 'figi': 'BBG000B9Y5X2'}",https://api.polygon.io/v2/tickers/AAPL

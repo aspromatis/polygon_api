@@ -1,0 +1,5 @@
+date,ticker,splitDeclaredDate,ratio,tofactor,forfactor
+2020-08-31,AAPL,2020-07-30,0.25,1.0,4.0
+2014-06-09,AAPL,,0.14285714285714285,1.0,7.0
+2005-02-28,AAPL,,0.5,,
+2000-06-21,AAPL,,0.5,,
