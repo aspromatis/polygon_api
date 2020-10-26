@@ -37,11 +37,12 @@ def get_tickers(url = POLYGON_TICKERS_URL):
 
     # This is to figure out how many pages to run pagination 
     count = data['count']
+    print('total tickers ' + str(count))
     pages = math.ceil(count / data['perPage'])
 
     # Pull in all the pages of tickers
-    # for pages in range (2, pages+1):  # For production
-    for pages in range (2, 10):  # For testing
+    for pages in range (2, pages+1):  # For production
+    # for pages in range (2, 10):  # For testing
         r = session.get(POLYGON_TICKERS_URL.format(page, ALPACA_API_KEY))
         data = r.json()
         df = pd.DataFrame(data['tickers'])
@@ -358,5 +359,6 @@ adj_bars('data/bars_adj')
 
 #%%
 bars = pd.read_csv('data/bars_adj/AAPL.csv')
-bars['close_adj'].plot()
+bars['close'].plot()
 
+# %%
