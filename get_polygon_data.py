@@ -13,7 +13,7 @@ from urllib3.util.retry import Retry
 # Set some constant variables, I could put all of this in a seperate config file
 ALPACA_API_KEY = os.environ.get('ALPACA_API_KEY')
 START_DATE = '2005-01-03'
-END_DATE = '2020-10-21'
+END_DATE = '2020-10-23'
 # URL for all the tickers on Polygon
 POLYGON_TICKERS_URL = 'https://api.polygon.io/v2/reference/tickers?page={}&apiKey={}'
 # URL FOR PRICING DATA - Note, getting pricing that is UNADJUSTED for splits, I will try and adjust those manually
@@ -100,8 +100,7 @@ def get_bars(symbolslist, outdir, start, end):
     
     barlog = open("barlog.txt", "w")
     
-    for symbol in symbolslist: # ['AAPL']:
-    # for symbol in ['AAPL']:
+    for symbol in symbolslist:
         try:
             r = session.get(POLYGON_AGGS_URL.format(symbol, start, end, ALPACA_API_KEY))
             if r:
@@ -159,8 +158,7 @@ def get_splits(symbolslist, outdir):
     count = 0
     
     # Get the split data
-    # for symbol in symbolslist: # ['AAPL']:
-    for symbol in symbolslist: # ['AAPL']:
+    for symbol in symbolslist:
         try:
             r = session.get(POLYGON_SPLIT_URL.format(symbol, ALPACA_API_KEY))
             if r:
@@ -356,7 +354,6 @@ combine_bars('data/bars', 'data/splits', 'data/divs')
 
 #%%  Create new and stock split adjusted OHLCV fields
 adj_bars('data/bars_adj')
-
 
 
 #%%
