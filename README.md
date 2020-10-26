@@ -14,7 +14,7 @@ Create a new virtual environment
 
 `$ conda create --name polyenv python=3.8`
 
-Active the new virtual environment
+Activate the new virtual environment
 
 `$ conda activate polyenv`
 
